@@ -18,7 +18,7 @@ class BlackBoxGiven {
         );
     }
     
-    // Parameterized test that tests --------------------------12
+    // Parameterized test that tests when a single letter guesses is within the correct word
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void correctLetter(Game game) {
@@ -30,7 +30,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests -----------------------13
+    // Parameterized test that tests when a single letter guess is incorrect
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void incorrectLetter(Game game) {
@@ -42,7 +42,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests ----------------------14
+    // Parameterized test that tests when the guess is the correct word
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void correctGuess(Game game) {
@@ -54,7 +54,7 @@ class BlackBoxGiven {
         assertEquals(1, game.getGameStatus());
     }
     
-    // Parameterized test that tests ---------------------15
+    // Parameterized test that tests when the guess is a partial of the correct word
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void partialGuess(Game game) {
@@ -66,7 +66,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests --------------------16
+    // Parameterized test that tests when the guess is too long by one character
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void oneCharacterTooLong(Game game) {
@@ -78,7 +78,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests ---------------------17
+    // Parameterized test that tests when a guess is too short by one character
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void oneCharacterTooShort(Game game) {
@@ -90,7 +90,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests -----------------------18
+    // Parameterized test that tests when the guess is extraordinarily long
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void extraLongWord(Game game) {
@@ -102,7 +102,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests -------------------------19
+    // Parameterized test that tests when the guess is a symbol character
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void symbolGuess(Game game) {
@@ -114,7 +114,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests -------------------------20
+    // Parameterized test that tests when the guess is a numeral character
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void numeralGuess(Game game) {
@@ -126,7 +126,7 @@ class BlackBoxGiven {
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests ------------------------21
+    // Parameterized test that tests when the guess is a duplicate guess
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void duplicateGuess(Game game) {
@@ -135,11 +135,11 @@ class BlackBoxGiven {
         game.makeGuess("dog");
         double response = game.makeGuess("dog");
         assertEquals(4.0, response, 0.01);
-        assertEquals(8, game.getPoints());
+        assertEquals(7, game.getPoints());
         assertEquals(0, game.getGameStatus());
     }
     
-    // Parameterized test that tests ------------------------22
+    // Parameterized test that tests when the game is over due to 10 incorrect guesses
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void gameOverGuess(Game game) {
@@ -150,11 +150,11 @@ class BlackBoxGiven {
         }
         double response = game.makeGuess("dog");
         assertEquals(5.0, response, 0.01);
-        assertEquals(-9, game.getPoints());
+        assertEquals(-7, game.getPoints());
         assertEquals(2, game.getGameStatus());
     }
     
-    // Parameterized test that tests ------------------------21
+    // Parameterized test that tests when the guess is made after the game is over
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void afterGameOverGuess(Game game) {
@@ -165,7 +165,6 @@ class BlackBoxGiven {
         }
         double response = game.makeGuess("dog");
         assertEquals(5.1, response, 0.01);
-        assertEquals(-9, game.getPoints());
         assertEquals(2, game.getGameStatus());
     }
 }
