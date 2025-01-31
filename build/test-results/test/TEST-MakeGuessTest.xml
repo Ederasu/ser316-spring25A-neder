@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MakeGuessTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-01-31T04:37:47" hostname="NICOMOTO" time="0.001">
+<testsuite name="MakeGuessTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-01-31T04:57:15" hostname="NICOMOTO" time="0.001">
   <properties/>
   <testcase name="correctGuess()" classname="MakeGuessTest" time="0.001"/>
   <system-out><![CDATA[Implement me in assignment 3

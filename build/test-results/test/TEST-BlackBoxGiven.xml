@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BlackBoxGiven" tests="60" skipped="0" failures="14" errors="0" timestamp="2025-01-31T04:37:47" hostname="NICOMOTO" time="0.067">
+<testsuite name="BlackBoxGiven" tests="60" skipped="0" failures="14" errors="0" timestamp="2025-01-31T04:57:15" hostname="NICOMOTO" time="0.067">
   <properties/>
-  <testcase name="[1] Game0@64ec96c6" classname="BlackBoxGiven" time="0.018">
+  <testcase name="[1] Game0@1e13529a" classname="BlackBoxGiven" time="0.019">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;14&gt; but was: &lt;24&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;14&gt; but was: &lt;24&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -9,7 +9,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//BlackBoxGiven.correctGuess(BlackBoxGiven.java:53)
+	at app//BlackBoxGiven.correctGuess(BlackBoxGiven.java:57)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -148,10 +148,10 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[2] Game1@2ce6c6ec" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@1bae316d" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@147a5d08" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[5] Game4@6676f6a0" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[2] Game1@7cbd9d24" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[3] Game2@1672fe87" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@5026735c" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@1b45c0e" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;1&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;1&gt; but was: &lt;0&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -159,7 +159,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//BlackBoxGiven.correctGuess(BlackBoxGiven.java:54)
+	at app//BlackBoxGiven.correctGuess(BlackBoxGiven.java:58)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -298,11 +298,11 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[1] Game0@11f0a5a1" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@10f7f7de" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@73a8da0f" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@50dfbc58" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[5] Game4@4416d64f" classname="BlackBoxGiven" time="0.004">
+  <testcase name="[1] Game0@4416d64f" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[2] Game1@6bf08014" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[3] Game2@5e3d57c7" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@732d0d24" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@1fb19a0" classname="BlackBoxGiven" time="0.003">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;3&gt; but was: &lt;17&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;3&gt; but was: &lt;17&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -310,7 +310,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//BlackBoxGiven.extraLongWord(BlackBoxGiven.java:101)
+	at app//BlackBoxGiven.extraLongWord(BlackBoxGiven.java:109)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -449,18 +449,18 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[1] Game0@332729ad" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@75d2da2d" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@4278284b" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@9573584" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[5] Game4@3370f42" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[1] Game0@6057aebb" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@63eef88a" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@53251a66" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[4] Game3@6853425f" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[5] Game4@352c1b98" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[1] Game0@21129f1f" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@5a9f4771" classname="BlackBoxGiven" time="0.0">
+  <testcase name="[1] Game0@5082d622" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[2] Game1@13d4992d" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@302f7971" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[4] Game3@332729ad" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@75d2da2d" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[1] Game0@4278284b" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@9573584" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@3370f42" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@6057aebb" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@63eef88a" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[1] Game0@53251a66" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@6853425f" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;1.1&gt; but was: &lt;1.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;1.1&gt; but was: &lt;1.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -468,7 +468,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.correctLetter(BlackBoxGiven.java:28)
+	at app//BlackBoxGiven.correctLetter(BlackBoxGiven.java:30)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -607,9 +607,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[3] Game2@68d279ec" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@258d79be" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[5] Game4@14f9390f" classname="BlackBoxGiven" time="0.0">
+  <testcase name="[3] Game2@282cb7c7" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@7d898981" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@48d61b48" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;1.1&gt; but was: &lt;1.0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;1.1&gt; but was: &lt;1.0&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -617,7 +617,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.correctLetter(BlackBoxGiven.java:28)
+	at app//BlackBoxGiven.correctLetter(BlackBoxGiven.java:30)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -756,11 +756,11 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[1] Game0@409c54f" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@3e74829" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@4f6f416f" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[4] Game3@3b8f0a79" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[5] Game4@71e693fa" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[1] Game0@6c0d7c83" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[2] Game1@176b75f7" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@5965be2d" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@409c54f" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@3e74829" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;9&gt; but was: &lt;11&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;9&gt; but was: &lt;11&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -768,7 +768,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//BlackBoxGiven.oneCharacterTooLong(BlackBoxGiven.java:77)
+	at app//BlackBoxGiven.oneCharacterTooLong(BlackBoxGiven.java:83)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -907,8 +907,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[1] Game0@7b8b43c7" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@7aaca91a" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[1] Game0@48793bef" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@7d286fb6" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;4.1&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;4.1&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -916,7 +916,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.numeralGuess(BlackBoxGiven.java:124)
+	at app//BlackBoxGiven.numeralGuess(BlackBoxGiven.java:134)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1055,11 +1055,11 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[3] Game2@7fcf2fc1" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@2141a12" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[5] Game4@4196c360" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[1] Game0@41294f8" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@225129c" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[3] Game2@44c73c26" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@41005828" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@60b4beb4" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[1] Game0@7fcf2fc1" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@2141a12" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;4.1&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;4.1&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1067,7 +1067,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.symbolGuess(BlackBoxGiven.java:112)
+	at app//BlackBoxGiven.symbolGuess(BlackBoxGiven.java:121)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1206,12 +1206,12 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[3] Game2@6d07a63d" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@571c5681" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[5] Game4@488d1cd7" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[1] Game0@68dc098b" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[2] Game1@38ba6ce3" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@d278d2b" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[3] Game2@20435c40" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@573906eb" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[5] Game4@479ceda0" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[1] Game0@6d07a63d" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[2] Game1@571c5681" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@488d1cd7" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;5.0&gt; but was: &lt;5.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;5.0&gt; but was: &lt;5.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1219,7 +1219,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.gameOverGuess(BlackBoxGiven.java:152)
+	at app//BlackBoxGiven.gameOverGuess(BlackBoxGiven.java:164)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1358,7 +1358,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[4] Game3@7fbdb894" classname="BlackBoxGiven" time="0.0">
+  <testcase name="[4] Game3@2d6c53fc" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;5.0&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;5.0&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1366,7 +1366,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.gameOverGuess(BlackBoxGiven.java:152)
+	at app//BlackBoxGiven.gameOverGuess(BlackBoxGiven.java:164)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1505,10 +1505,10 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[5] Game4@7ceb3185" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[1] Game0@436c81a3" classname="BlackBoxGiven" time="0.001"/>
-  <testcase name="[2] Game1@3561c410" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@59e32960" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[5] Game4@3081f72c" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[1] Game0@3148f668" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@6e005dc9" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[3] Game2@7ceb3185" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;7&gt; but was: &lt;5&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;7&gt; but was: &lt;5&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1516,7 +1516,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//BlackBoxGiven.duplicateGuess(BlackBoxGiven.java:138)
+	at app//BlackBoxGiven.duplicateGuess(BlackBoxGiven.java:149)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1655,7 +1655,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[4] Game3@20f5281c" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[4] Game3@7c214cc0" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;4.0&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;4.0&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1663,7 +1663,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.duplicateGuess(BlackBoxGiven.java:137)
+	at app//BlackBoxGiven.duplicateGuess(BlackBoxGiven.java:148)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1802,11 +1802,11 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[5] Game4@341814d3" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[1] Game0@4397ad89" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@59cba5a" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@1bd39d3c" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@6f19ac19" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[5] Game4@56c4278e" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[1] Game0@301eda63" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@3d246ea3" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@341814d3" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@4397ad89" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;5.1&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;5.1&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1814,7 +1814,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.afterGameOverGuess(BlackBoxGiven.java:167)
+	at app//BlackBoxGiven.afterGameOverGuess(BlackBoxGiven.java:180)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -1953,11 +1953,11 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[5] Game4@5454d35e" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[1] Game0@20c0a64d" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[2] Game1@455b6df1" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[3] Game2@4ddbbdf8" classname="BlackBoxGiven" time="0.0"/>
-  <testcase name="[4] Game3@3f67593e" classname="BlackBoxGiven" time="0.001">
+  <testcase name="[5] Game4@119cbf96" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[1] Game0@71329995" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[2] Game1@768fc0f2" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[3] Game2@5454d35e" classname="BlackBoxGiven" time="0.0"/>
+  <testcase name="[4] Game3@20c0a64d" classname="BlackBoxGiven" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;3.0&gt; but was: &lt;2.2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;3.0&gt; but was: &lt;2.2&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -1965,7 +1965,7 @@
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
 	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:81)
 	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1010)
-	at app//BlackBoxGiven.partialGuess(BlackBoxGiven.java:64)
+	at app//BlackBoxGiven.partialGuess(BlackBoxGiven.java:69)
 	at java.base@21.0.6/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -2104,7 +2104,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="[5] Game4@1115ec15" classname="BlackBoxGiven" time="0.001"/>
+  <testcase name="[5] Game4@1ab06251" classname="BlackBoxGiven" time="0.0"/>
   <system-out><![CDATA[Easter Egg 1: And so it begins, the easter egg hunt....
 Easter Egg 1: And so it begins, the easter egg hunt....
 Easter Egg 6: ?v=xvFZjo5PgG0

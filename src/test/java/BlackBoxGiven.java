@@ -1,6 +1,7 @@
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -19,6 +20,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when a single letter guesses is within the correct word
+    @DisplayName("Correct Letter Guess")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void correctLetter(Game game) {
@@ -31,6 +33,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when a single letter guess is incorrect
+    @DisplayName("Incorrect Letter Guess")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void incorrectLetter(Game game) {
@@ -43,6 +46,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is the correct word
+    @DisplayName("Correct Guess")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void correctGuess(Game game) {
@@ -55,6 +59,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is a partial of the correct word
+    @DisplayName("Partially Correct Guess")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void partialGuess(Game game) {
@@ -67,6 +72,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is too long by one character
+    @DisplayName("Guess Too Long")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void oneCharacterTooLong(Game game) {
@@ -79,6 +85,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when a guess is too short by one character
+    @DisplayName("Guess Too Short")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void oneCharacterTooShort(Game game) {
@@ -91,6 +98,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is extraordinarily long
+    @DisplayName("Guess Extra Long")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void extraLongWord(Game game) {
@@ -103,6 +111,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is a symbol character
+    @DisplayName("Guess is a Symbol")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void symbolGuess(Game game) {
@@ -115,6 +124,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is a numeral character
+    @DisplayName("Guess is a Numeral")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void numeralGuess(Game game) {
@@ -127,6 +137,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is a duplicate guess
+    @DisplayName("Guess is a Duplicate")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void duplicateGuess(Game game) {
@@ -140,6 +151,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the game is over due to 10 incorrect guesses
+    @DisplayName("Guess Causes Game Over")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void gameOverGuess(Game game) {
@@ -155,6 +167,7 @@ class BlackBoxGiven {
     }
     
     // Parameterized test that tests when the guess is made after the game is over
+    @DisplayName("Guess After Game Over")
     @ParameterizedTest
     @MethodSource("provideGuessingGameInstances")
     public void afterGameOverGuess(Game game) {
