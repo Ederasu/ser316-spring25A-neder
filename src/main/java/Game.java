@@ -12,7 +12,7 @@ public class Game
     /** Holds the points for the game. */
     public int  points;
     
-    /** Holds the round of the game. */
+    /** Holds the round number of the game. */
     int gameRoundNumber;
 
     /** Holds the player name for the game. */
