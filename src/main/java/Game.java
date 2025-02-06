@@ -197,10 +197,8 @@ public class Game
     {
 
         String[] animals = {"dog", "horse", "pony", "cat", "lion", "bear","lioncub", };
-
-        int randomNum = 0;
-        randomNum = (int) (Math.floor(Math.random() * (100 - 2 + 1) + 2) % animals.length);
-        this.answer = animals[randomNum];
+        Random random = new Random();
+        this.answer = animals[random.nextInt(animals.length)];
     }
 
 }
