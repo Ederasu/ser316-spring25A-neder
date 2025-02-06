@@ -188,27 +188,36 @@ public class Game
     public double makeGuess(String guess) {
     
         double returnValue = 0;
+        guess = guess.toLowerCase();
+        this.guesses.add(guess);
+        boolean guessAlreadyInGuesses = false;
+        boolean result = false;
+        for (String g : this.guesses) {
+            if (g.equals(guess)) {
+                guessAlreadyInGuesses = true;
+            }
+        }
+        
+        // Sets returnValue for game over status
+        if (this.guesses.size() >= 10) {
+            this.gameStatus = 2;
+            returnValue =  5.0;
+        }
 
+        // Sets returnValue for a nonactive game
         if (this.gameStatus != 0) {
             returnValue = 5.1;
-        }
+        } else if
 
-        guess = guess.toLowerCase();
+        // Sets returnValue for correct guess
+        (guess.equals(this.answer)) {
+            this.points += this.answer.length();
+            this.gameStatus = 1;
+            returnValue =  0.0;
+        } else if
 
-        if (!guess.matches("[a-zA-Z]+")) {
-            this.points -= 3;
-            this.guesses.add(guess);
-            returnValue = 4.1;
-        }
-
-        if (this.guesses.contains(guess)) {
-            this.points -= 2;
-            returnValue =  4.0;
-        }
-
-        this.guesses.add(guess);
-
-        if (guess.length() == 1) {
+        // Sets returnValue for single letter guess
+        (guess.length() == 1) {
             int occurrences = countLetters(guess.charAt(0));
             if (occurrences > 0) {
                 this.points += occurrences;
@@ -216,39 +225,46 @@ public class Game
             } else {
                 returnValue =  1.0;
             }
-        }
+        } else if
 
-        if (guess.equals(this.answer)) {
-            this.points += this.answer.length();
-            this.gameStatus = 1;
-            returnValue =  0.0;
-        }
+        // Sets returnValue for duplicate guess
+        (guessAlreadyInGuesses = true) {
+            this.points -= 2;
+            returnValue = 4.0;
+        } else if
 
-        if (guess.length() == this.answer.length()) {
+        // Sets returnValue for guess containing numbers or symbols
+            (!guess.matches("[a-zA-Z]+")) {
+            this.points -= 3;
+            this.guesses.add(guess);
+            returnValue = 4.1;
+        } else if
+
+        // Sets returnValue for wrong word guess of correct length
+            (guess.length() == this.answer.length()) {
             this.points += 1;
             returnValue =  2.0;
-        }
+        } else if
 
-        if (guess.length() < this.answer.length()) {
+        // Sets returnValue for guess too long
+            (guess.length() < this.answer.length()) {
             this.points -= (this.answer.length() - guess.length());
             returnValue =  2.1;
-        }
+        } else if
 
-        if (guess.length() > this.answer.length()) {
+        // Sets returnValue for guess too short
+            (guess.length() > this.answer.length()) {
             this.points -= (guess.length() - this.answer.length());
             returnValue =  2.2;
-        }
+        } else if
 
-        if (this.answer.contains(guess)) {
+        // Sets returnValue for guess that is incorrect but included in answer
+            (this.answer.contains(guess)) {
             this.points += 2;
             returnValue =  3.0;
         }
 
-        if (this.guesses.size() >= 10) {
-            this.gameStatus = 2;
-            returnValue =  5.0;
-        }
-
+        // return final returnValue value
         return returnValue;
     }
 
