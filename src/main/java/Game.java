@@ -13,7 +13,7 @@ public class Game
     public int  points;
     
     /** Holds the round of the game. */
-    int a;
+    int gameRoundNumber;
 
     /** Holds the player name for the game. */
     String name;
