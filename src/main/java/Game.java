@@ -186,8 +186,70 @@ public class Game
      * @return double returns the appropriate number
      */
     public double makeGuess(String guess) {
-        System.out.println("Implement me in assignment 3");
-        return 0.0;
+    
+        double returnValue = 0;
+
+        if (this.gameStatus != 0) {
+            returnValue = 5.1;
+        }
+
+        guess = guess.toLowerCase();
+
+        if (!guess.matches("[a-zA-Z]+")) {
+            this.points -= 3;
+            this.guesses.add(guess);
+            returnValue = 4.1;
+        }
+
+        if (this.guesses.contains(guess)) {
+            this.points -= 2;
+            returnValue =  4.0;
+        }
+
+        this.guesses.add(guess);
+
+        if (guess.length() == 1) {
+            int occurrences = countLetters(guess.charAt(0));
+            if (occurrences > 0) {
+                this.points += occurrences;
+                returnValue =  1.0 + occurrences / 10.0;
+            } else {
+                returnValue =  1.0;
+            }
+        }
+
+        if (guess.equals(this.answer)) {
+            this.points += this.answer.length();
+            this.gameStatus = 1;
+            returnValue =  0.0;
+        }
+
+        if (guess.length() == this.answer.length()) {
+            this.points += 1;
+            returnValue =  2.0;
+        }
+
+        if (guess.length() < this.answer.length()) {
+            this.points -= (this.answer.length() - guess.length());
+            returnValue =  2.1;
+        }
+
+        if (guess.length() > this.answer.length()) {
+            this.points -= (guess.length() - this.answer.length());
+            returnValue =  2.2;
+        }
+
+        if (this.answer.contains(guess)) {
+            this.points += 2;
+            returnValue =  3.0;
+        }
+
+        if (this.guesses.size() >= 10) {
+            this.gameStatus = 2;
+            returnValue =  5.0;
+        }
+
+        return returnValue;
     }
 
     /**
