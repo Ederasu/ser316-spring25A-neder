@@ -76,7 +76,7 @@ public class guessTest {
     // Tests when the guess is extraordinarily long
     @Test
     @DisplayName("Guess Extra Long")
-    void extraLongWord(Game game) {
+    void extraLongWord() {
         Game game = new Game("lion", "Dr. M");
         double response = game.makeGuess("rhinocerous");
         assertEquals(2.1, response, 0.01);

@@ -186,87 +186,80 @@ public class Game
      * @return double returns the appropriate number
      */
     public double makeGuess(String guess) {
-    
-        double returnValue = 0;
         guess = guess.toLowerCase();
-        this.guesses.add(guess);
-        boolean guessAlreadyInGuesses = false;
-        boolean result = false;
-        for (String g : this.guesses) {
-            if (g.equals(guess)) {
-                guessAlreadyInGuesses = true;
-            }
+    
+        // Game over check before anything else
+        if (guesses.size() >= 10) {
+            this.gameStatus = 2;
+            return 5.0;
+        }
+    
+        // If the game is already won or over
+        if (this.gameStatus != 0) {
+            return 5.1;
         }
         
-        // Sets returnValue for game over status
-        if (this.guesses.size() >= 10) {
-            this.gameStatus = 2;
-            returnValue =  5.0;
-        }
-
-        // Sets returnValue for a nonactive game
-        if (this.gameStatus != 0) {
-            returnValue = 5.1;
-        } else if
-
-        // Sets returnValue for correct guess
-        (guess.equals(this.answer)) {
+        // If the guess is the full correct word
+        if (guess.equals(this.answer)) {
             this.points += this.answer.length();
             this.gameStatus = 1;
-            returnValue =  0.0;
-        } else if
-
-        // Sets returnValue for single letter guess
-        (guess.length() == 1) {
+            return 0.0;
+        }
+    
+        // Check for non-letter characters before adding to guesses
+        if (!guess.matches("[a-zA-Z]+")) {
+            this.points -= 3;
+            guesses.add(guess);
+            return 4.1;
+        }
+    
+        // If the guess was already made
+        if (guesses.contains(guess)) {
+            this.points -= 2;
+            return 4.0;
+        }
+    
+        // Add valid guess to list
+        guesses.add(guess);
+    
+        // If it's a single letter guess
+        if (guess.length() == 1) {
             int occurrences = countLetters(guess.charAt(0));
             if (occurrences > 0) {
                 this.points += occurrences;
-                returnValue =  1.0 + occurrences / 10.0;
+                return 1.0 + occurrences / 10.0;
             } else {
-                returnValue =  1.0;
+                return 1.0;
             }
-        } else if
-
-        // Sets returnValue for duplicate guess
-        (guessAlreadyInGuesses = true) {
-            this.points -= 2;
-            returnValue = 4.0;
-        } else if
-
-        // Sets returnValue for guess containing numbers or symbols
-            (!guess.matches("[a-zA-Z]+")) {
-            this.points -= 3;
-            this.guesses.add(guess);
-            returnValue = 4.1;
-        } else if
-
-        // Sets returnValue for wrong word guess of correct length
-            (guess.length() == this.answer.length()) {
+        }
+    
+        // If the guess is a full word but incorrect
+        if (guess.length() == this.answer.length()) {
             this.points += 1;
-            returnValue =  2.0;
-        } else if
-
-        // Sets returnValue for guess too long
-            (guess.length() < this.answer.length()) {
-            this.points -= (this.answer.length() - guess.length());
-            returnValue =  2.1;
-        } else if
-
-        // Sets returnValue for guess too short
-            (guess.length() > this.answer.length()) {
-            this.points -= (guess.length() - this.answer.length());
-            returnValue =  2.2;
-        } else if
-
-        // Sets returnValue for guess that is incorrect but included in answer
-            (this.answer.contains(guess)) {
-            this.points += 2;
-            returnValue =  3.0;
+            return 2.0;
         }
 
-        // return final returnValue value
-        return returnValue;
+        // If the guess is partially included in the word
+        if (this.answer.contains(guess)) {
+            this.points += 2;
+            return 3.0;
+        }
+    
+        // If the word is too long
+        if (guess.length() > this.answer.length()) {
+            this.points -= (guess.length() - this.answer.length());
+            return 2.1;
+        }
+    
+        // If the word is too short
+        if (guess.length() < this.answer.length()) {
+            this.points -= (this.answer.length() - guess.length());
+            return 2.2;
+        }
+    
+        return 0.0; // Fallback
     }
+    
 
     /**
      * Pulls out a random animal and sets it as answer
