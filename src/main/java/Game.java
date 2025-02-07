@@ -193,17 +193,17 @@ public class Game
             this.gameStatus = 2;
             return 5.0;
         }
-    
-        // If the game is already won or over
-        if (this.gameStatus != 0) {
-            return 5.1;
-        }
         
         // If the guess is the full correct word
         if (guess.equals(this.answer)) {
             this.points += this.answer.length();
             this.gameStatus = 1;
             return 0.0;
+        }
+        
+        // If the game is already won or over
+        if (this.gameStatus != 0) {
+            return 5.1;
         }
     
         // Check for non-letter characters before adding to guesses
@@ -256,8 +256,8 @@ public class Game
             this.points -= (this.answer.length() - guess.length());
             return 2.2;
         }
-    
-        return 0.0; // Fallback
+
+        return 0.0;
     }
     
 
