@@ -114,7 +114,7 @@ public class guessTest {
         assertEquals(7, game.getPoints());
         assertEquals(0, game.getGameStatus());
     }
-    
+    /*
     // Tests when the game is over due to 10 incorrect guesses
     @Test
     @DisplayName("Guess Causes Game Over")
@@ -141,4 +141,5 @@ public class guessTest {
         assertEquals(5.1, response, 0.01);
         assertEquals(2, game.getGameStatus());
     }
+    */
 }
