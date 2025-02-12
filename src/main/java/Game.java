@@ -12,8 +12,8 @@ public class Game
     /** Holds the points for the game. */
     public int  points;
     
-    /** Holds the round of the game. */
-    int a;
+    /** Holds the round number of the game. */
+    int gameRoundNumber;
 
     /** Holds the player name for the game. */
     String name;
@@ -38,7 +38,9 @@ public class Game
      * Gets the name for the game.
      * @return String The name.
      */
-    public String getName() {return this.answer;}
+    public String getName() {
+        return this.name;
+    }
 
     /**
      * Gets the answer for the game and puts it lowecase
@@ -184,9 +186,80 @@ public class Game
      * @return double returns the appropriate number
      */
     public double makeGuess(String guess) {
-        System.out.println("Implement me in assignment 3");
+        guess = guess.toLowerCase();
+    
+        // Game over check before anything else
+        if (guesses.size() >= 10) {
+            this.gameStatus = 2;
+            return 5.0;
+        }
+        
+        // If the guess is the full correct word
+        if (guess.equals(this.answer)) {
+            this.points += this.answer.length();
+            this.gameStatus = 1;
+            return 0.0;
+        }
+        
+        // If the game is already won or over
+        if (this.gameStatus != 0) {
+            return 5.1;
+        }
+    
+        // Check for non-letter characters before adding to guesses
+        if (!guess.matches("[a-zA-Z]+")) {
+            this.points -= 3;
+            guesses.add(guess);
+            return 4.1;
+        }
+    
+        // If the guess was already made
+        if (guesses.contains(guess)) {
+            this.points -= 2;
+            return 4.0;
+        }
+    
+        // Add valid guess to list
+        guesses.add(guess);
+    
+        // If it's a single letter guess
+        if (guess.length() == 1) {
+            int occurrences = countLetters(guess.charAt(0));
+            if (occurrences > 0) {
+                this.points += occurrences;
+                return 1.0 + occurrences / 10.0;
+            } else {
+                return 1.0;
+            }
+        }
+    
+        // If the guess is a full word but incorrect
+        if (guess.length() == this.answer.length()) {
+            this.points += 1;
+            return 2.0;
+        }
+
+        // If the guess is partially included in the word
+        if (this.answer.contains(guess)) {
+            this.points += 2;
+            return 3.0;
+        }
+    
+        // If the word is too long
+        if (guess.length() > this.answer.length()) {
+            this.points -= (guess.length() - this.answer.length());
+            return 2.1;
+        }
+    
+        // If the word is too short
+        if (guess.length() < this.answer.length()) {
+            this.points -= (this.answer.length() - guess.length());
+            return 2.2;
+        }
+
         return 0.0;
     }
+    
 
     /**
      * Pulls out a random animal and sets it as answer
@@ -195,10 +268,8 @@ public class Game
     {
 
         String[] animals = {"dog", "horse", "pony", "cat", "lion", "bear","lioncub", };
-
-        int randomNum = 0;
-        randomNum = (int) (Math.floor(Math.random() * (100 - 2 + 1) + 2) % animals.length);
-        this.answer = animals[randomNum];
+        Random random = new Random();
+        this.answer = animals[random.nextInt(animals.length)];
     }
 
 }
