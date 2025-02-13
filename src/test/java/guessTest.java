@@ -1,9 +1,10 @@
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class guessTest {
-    
+
     // Tests when a single letter guesses is within the correct word
     @Test
     @DisplayName("Correct Letter Guess")
@@ -25,7 +26,7 @@ public class guessTest {
         assertEquals(10, game.getPoints());
         assertEquals(0, game.getGameStatus());
     }
-    
+
     // Tests when the guess is the correct word
     @Test
     @DisplayName("Correct Word Guess")
@@ -58,7 +59,7 @@ public class guessTest {
         assertEquals(9, game.getPoints());
         assertEquals(0, game.getGameStatus());
     }
-    
+
     // Tests when a guess is too short by one character
     @Test
     @DisplayName("Guess Too Short")
@@ -141,5 +142,5 @@ public class guessTest {
         assertEquals(5.1, response, 0.01);
         assertEquals(2, game.getGameStatus());
     }
-    */
+     */
 }
