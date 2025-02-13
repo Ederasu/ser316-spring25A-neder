@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guessTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-02-07T04:46:05" hostname="NICOMOTO" time="0.036">
+<testsuite name="GuessTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-02-13T05:23:32" hostname="NICOMOTO" time="0.067">
   <properties/>
-  <testcase name="Correct Word Guess" classname="guessTest" time="0.029"/>
-  <testcase name="Guess Extra Long" classname="guessTest" time="0.0"/>
-  <testcase name="Incorrect Letter Guess" classname="guessTest" time="0.0"/>
-  <testcase name="Guess Too Short" classname="guessTest" time="0.0"/>
-  <testcase name="Correct Letter Guess" classname="guessTest" time="0.0"/>
-  <testcase name="Guess Too Long" classname="guessTest" time="0.0"/>
-  <testcase name="Guess is a Numeral" classname="guessTest" time="0.0"/>
-  <testcase name="Guess is a Symbol" classname="guessTest" time="0.0"/>
-  <testcase name="Guess is a Duplicate" classname="guessTest" time="0.0"/>
-  <testcase name="Partially Correct Word Guess" classname="guessTest" time="0.0"/>
+  <testcase name="Correct Word Guess" classname="GuessTest" time="0.045"/>
+  <testcase name="Guess Extra Long" classname="GuessTest" time="0.001"/>
+  <testcase name="Incorrect Letter Guess" classname="GuessTest" time="0.001"/>
+  <testcase name="Guess Too Short" classname="GuessTest" time="0.002"/>
+  <testcase name="Correct Letter Guess" classname="GuessTest" time="0.001"/>
+  <testcase name="Guess Too Long" classname="GuessTest" time="0.0"/>
+  <testcase name="Guess is a Numeral" classname="GuessTest" time="0.002"/>
+  <testcase name="Guess is a Symbol" classname="GuessTest" time="0.0"/>
+  <testcase name="Guess is a Duplicate" classname="GuessTest" time="0.0"/>
+  <testcase name="Partially Correct Word Guess" classname="GuessTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting Game with JaCoCo 0.8.8.202204050719/5dcf34a.
 	at org.jacoco.agent.rt.internal_b6258fc.CoverageTransformer.transform(CoverageTransformer.java:94)
@@ -26,7 +26,7 @@
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at guessTest.correctGuess(guessTest.java:33)
+	at GuessTest.correctGuess(GuessTest.java:34)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
