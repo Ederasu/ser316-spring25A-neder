@@ -26,5 +26,5 @@ replay_pid*
 /.gradle/
 /build/
 /.vscode/
-!checkstyle.xml
+!config/checkstyle/checkstyle.xml
 
