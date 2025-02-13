@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class guessTest {
+public class GuessTest { //SER316 TASK 2 SPOT-BUGS FIX
 
     // Tests when a single letter guesses is within the correct word
     @Test

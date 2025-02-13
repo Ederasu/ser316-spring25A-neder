@@ -1,5 +1,7 @@
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Random;
 
 /**
  * Class for handling some game logic for hangman game. Every game starts with a
@@ -13,17 +15,17 @@ public class Game {
     /**
      * Holds the points for the game.
      */
-    public int points;
+    private int points;
 
     /**
      * Holds the round number of the game.
      */
-    int gameRoundNumber;
+    //int gameRoundNumber;  //SER316 TASK 2 SPOT-BUGS FIX
 
     /**
      * Holds the player name for the game.
      */
-    String name;
+    private String name;
 
     /**
      * Holds the answer for the current game.
@@ -33,12 +35,14 @@ public class Game {
     /**
      * The path to the file holding the leaderboard.
      */
-    private String leaderboard = "leaderboard.txt";
+    //private String leaderboard = "leaderboard.txt";   //SER316 TASK 2 SPOT-BUGS FIX
 
     /**
      * The status of the game. {0 - In progress, 1 - Game won, 2 - game over}
      */
     protected int gameStatus = 0;
+
+    private static final Random random = new Random();  //SER316 TASK 2 SPOT-BUGS FIX
 
     // all things that were already guessed, needs to be cleared for each game
     ArrayList<String> guesses = new ArrayList<String>();
@@ -61,7 +65,7 @@ public class Game {
      * @return String The Answer.
      */
     public String getAnswer() {
-        return this.answer.toLowerCase();
+        return this.answer.toLowerCase(Locale.ENGLISH); //SER316 TASK 2 SPOT-BUGS FIX
     }
 
     /**
@@ -132,11 +136,14 @@ public class Game {
      *
      * @param name
      */
-    public Game(String name) {
+    public Game(String name) {  //SER316 TASK 2 SPOT-BUGS FIX
         this.name = name;
-        setRandomWord();
-        setPoints(5);
+        initializeGame();
+    }
 
+    private final void initializeGame() {   //SER316 TASK 2 SPOT-BUGS FIX
+        setRandomWord();
+        setPoints(10);
     }
 
     /**
@@ -215,7 +222,7 @@ public class Game {
      * @return double returns the appropriate number
      */
     public double makeGuess(String guess) {
-        guess = guess.toLowerCase();
+        guess = guess.toLowerCase(Locale.ENGLISH); //SER316 TASK 2 SPOT-BUGS FIX
 
         // Game over check before anything else
         if (guesses.size() >= 10) {
@@ -292,10 +299,9 @@ public class Game {
     /**
      * Pulls out a random animal and sets it as answer
      */
-    public void setRandomWord() {
+    private void setRandomWord() {    //SER316 TASK 2 SPOT-BUGS FIX
 
-        String[] animals = {"dog", "horse", "pony", "cat", "lion", "bear", "lioncub",};
-        Random random = new Random();
+        String[] animals = {"dog", "horse", "pony", "cat", "lion", "bear", "lioncub"};
         this.answer = animals[random.nextInt(animals.length)];
     }
 
