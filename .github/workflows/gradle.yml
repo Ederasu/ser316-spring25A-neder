@@ -15,7 +15,7 @@ on:
       - Review
       - Whitebox
       - StaticAnalysis
-      -Dev
+      - Dev
 
   pull_request:
     branches:
@@ -24,7 +24,7 @@ on:
       - Review
       - Whitebox
       - StaticAnalysis
-      -Dev
+      - Dev
 
 jobs:
   build:
