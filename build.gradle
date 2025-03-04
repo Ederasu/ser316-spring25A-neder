@@ -1,6 +1,7 @@
  plugins {
       id "com.github.spotbugs" version "5.0.13"
       id "checkstyle"
+      id 'pmd'
  }
  
 apply plugin: 'jacoco'
@@ -38,6 +39,15 @@ jacocoTestReport {
         csv.required = false
         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
+}
+
+apply plugin: "pmd"
+pmd {
+  ignoreFailures = true 
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/pmd")
+  ruleSets = []
+  ruleSetConfig = resources.text.fromFile('ruleset.xml')
 }
 
  apply plugin: 'checkstyle'
