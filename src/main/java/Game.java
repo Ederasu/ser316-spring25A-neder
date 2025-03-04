@@ -1,185 +1,57 @@
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+import java.util.Set;
 
-/**
- * Class for handling some game logic for hangman game. Every game starts with a
- * score of 10 and the points are reduced or increased based on the description
- * of "makeGuess". Points holds the current score for one game. Game is lost
- * when the user made 10 guesses and did not guess the word.
- *
- */
-public class Game {
-
-    /**
-     * Holds the points for the game.
-     */
+class Game {
     private int points;
-
-    /**
-     * Holds the round number of the game.
-     */
-    //int gameRoundNumber;  //SER316 TASK 2 SPOT-BUGS FIX
-
-    /**
-     * Holds the player name for the game.
-     */
     private String name;
-
-    /**
-     * Holds the answer for the current game.
-     */
-    String answer;
-
-    /**
-     * The path to the file holding the leaderboard.
-     */
-    //private String leaderboard = "leaderboard.txt";   //SER316 TASK 2 SPOT-BUGS FIX
-
-    /**
-     * The status of the game. {0 - In progress, 1 - Game won, 2 - game over}
-     */
+    private String answer;
+    private static final Random random = new Random();
+    private static final String LEADERBOARD_FILE = "leaderboard.txt";
+    private static final List<String> words = new ArrayList<>(Arrays.asList("dog", "horse", "pony", "cat", "lion", "bear", "lioncub"));
+    private static final Set<String> usedWords = new HashSet<>();
     protected int gameStatus = 0;
+    private List<String> guesses = new ArrayList<>();
 
-    private static final Random random = new Random();  //SER316 TASK 2 SPOT-BUGS FIX
-
-    // all things that were already guessed, needs to be cleared for each game
-    ArrayList<String> guesses = new ArrayList<String>();
-
-    // all answers from makeGuess that were already returned
-    ArrayList<Double> answers = new ArrayList<Double>();
-
-    /**
-     * Gets the name for the game.
-     *
-     * @return String The name.
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Gets the answer for the game and puts it lowecase
-     *
-     * @return String The Answer.
-     */
-    public String getAnswer() {
-        return this.answer.toLowerCase(Locale.ENGLISH); //SER316 TASK 2 SPOT-BUGS FIX
-    }
-
-    /**
-     * Gets the current status of the game.
-     *
-     * @return
-     */
-    public int getGameStatus() {
-        return this.gameStatus;
-    }
-
-    /**
-     * Sets the score for the game.
-     *
-     * @param points
-     */
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-    /**
-     * Gets the score for the game.
-     */
-    public int getPoints() {
-        return this.points;
-    }
-
-    /**
-     * Counts the number of letters that have been guessed correctly during the
-     * game.
-     */
-    public int countCorrectLetters() {
-        int result = 0;
-        if (!guesses.isEmpty()) {
-            for (int i = 0; i < this.answer.length(); i++) {
-                String current = String.valueOf(this.answer.charAt(i));
-                if (guesses.contains(current)) {
-                    result++;
-                    System.out.print(this.answer.charAt(i));
-                } else {
-                    System.out.print('_');
-                }
-            }
-            System.out.println();
-        } else {
-            return 0;
-        }
-        return result;
-    }
-
-    /**
-     * Counts how often a letter occurs
-     *
-     * @param letter
-     */
-    public int countLetters(char letter) {
-        int count = 0;
-        int i = 0;
-        while (this.getAnswer().indexOf(letter, i) >= 0) {
-            i = this.getAnswer().indexOf(letter, i) + 1;
-            count++;
-        }
-        return count;
-    }
-
-    /**
-     * Constructs a new game with a random word.
-     *
-     * @param name
-     */
-    public Game(String name) {  //SER316 TASK 2 SPOT-BUGS FIX
+    public Game(String name) {
         this.name = name;
         initializeGame();
     }
 
-    private final void initializeGame() {   //SER316 TASK 2 SPOT-BUGS FIX
+    private void initializeGame() {
         setRandomWord();
         setPoints(10);
     }
 
-    /**
-     * Constructs a new game with a given word and given name.
-     *
-     * @param name
-     */
-    public Game(String fixedWord, String name) {
-        this.name = "Anna";
-        this.answer = fixedWord;
-        setPoints(10);
+    private void setPoints(int point) {
+        this.points = point;
     }
 
-    /**
-     * Constructs a new game with no arguments, empty name and answer
-     */
-    public Game() {
-        this.name = "";
-        this.answer = "";
-        setPoints(10);
+    private void setRandomWord() {
+        List<String> availableWords = new ArrayList<>(words);
+        availableWords.removeAll(usedWords);
+        if (availableWords.isEmpty()) {
+            usedWords.clear();
+            availableWords.addAll(words);
+        }
+        this.answer = availableWords.get(random.nextInt(availableWords.size()));
+        usedWords.add(this.answer);
     }
 
-    /**
-     * Sets the name and answers of an already existing game and clears the
-     * guesses
-     */
-    public void initGame(String answer, String name) {
-        this.name = name;
-        this.answer = answer;
-        this.gameStatus = 0;
-        this.guesses.clear();
-        this.answers.clear();
-        setPoints(10);
+    public String getAnswer() {
+        return this.answer.toLowerCase(Locale.ENGLISH);
     }
 
-    /**
+        /**
      * Checks if the guess made is correct, should ignore upper/lower case.
      * Should give points based on made guess. Method returns a double, number
      * of the double has different meanings 0 Correct guess 1.x Letter is in the
@@ -221,44 +93,33 @@ public class Game {
      * @param guess
      * @return double returns the appropriate number
      */
-    public double makeGuess(String guess) {
-        guess = guess.toLowerCase(Locale.ENGLISH); //SER316 TASK 2 SPOT-BUGS FIX
 
-        // Game over check before anything else
+    public double makeGuess(String guess) {
+        guess = guess.toLowerCase(Locale.ENGLISH);
+        
+        if (gameStatus == 2) {
+            return 5.1;
+        }
         if (guesses.size() >= 10) {
             this.gameStatus = 2;
             return 5.0;
         }
-
-        // If the guess is the full correct word
         if (guess.equals(this.answer)) {
             this.points += this.answer.length();
             this.gameStatus = 1;
             return 0.0;
         }
-
-        // If the game is already won or over
-        if (this.gameStatus != 0) {
-            return 5.1;
-        }
-
-        // Check for non-letter characters before adding to guesses
+        
         if (!guess.matches("[a-zA-Z]+")) {
             this.points -= 3;
             guesses.add(guess);
             return 4.1;
         }
-
-        // If the guess was already made
         if (guesses.contains(guess)) {
             this.points -= 2;
             return 4.0;
         }
-
-        // Add valid guess to list
         guesses.add(guess);
-
-        // If it's a single letter guess
         if (guess.length() == 1) {
             int occurrences = countLetters(guess.charAt(0));
             if (occurrences > 0) {
@@ -268,41 +129,34 @@ public class Game {
                 return 1.0;
             }
         }
-
-        // If the guess is a full word but incorrect
-        if (guess.length() == this.answer.length()) {
-            this.points += 1;
-            return 2.0;
-        }
-
-        // If the guess is partially included in the word
-        if (this.answer.contains(guess)) {
-            this.points += 2;
-            return 3.0;
-        }
-
-        // If the word is too long
-        if (guess.length() > this.answer.length()) {
-            this.points -= (guess.length() - this.answer.length());
-            return 2.1;
-        }
-
-        // If the word is too short
-        if (guess.length() < this.answer.length()) {
-            this.points -= (this.answer.length() - guess.length());
-            return 2.2;
-        }
-
-        return 0.0;
+        return 2.0;
     }
 
-    /**
-     * Pulls out a random animal and sets it as answer
-     */
-    private void setRandomWord() {    //SER316 TASK 2 SPOT-BUGS FIX
-
-        String[] animals = {"dog", "horse", "pony", "cat", "lion", "bear", "lioncub"};
-        this.answer = animals[random.nextInt(animals.length)];
+    private int countLetters(char letter) {
+        int count = 0;
+        for (char c : answer.toCharArray()) {
+            if (c == letter) count++;
+        }
+        return count;
     }
 
+    public void saveScore() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(LEADERBOARD_FILE, true))) {
+            writer.write(name + ": " + points + "\n");
+        } catch (IOException e) {
+            System.out.println("Error saving score: " + e.getMessage());
+        }
+    }
+
+    public void displayLeaderboard() {
+        System.out.println("Leaderboard:");
+        try (BufferedReader reader = new BufferedReader(new FileReader(LEADERBOARD_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading leaderboard: " + e.getMessage());
+        }
+    }
 }

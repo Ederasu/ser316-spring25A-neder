@@ -1,9 +1,9 @@
  plugins {
-      id "com.github.spotbugs" version "5.0.13"
-      id "checkstyle"
-      id 'pmd'
+     id "com.github.spotbugs" version "5.0.13"
+     id "checkstyle"
+     id 'pmd'
  }
- 
+
 apply plugin: 'jacoco'
 apply plugin: 'application'
 
@@ -51,17 +51,17 @@ pmd {
 }
 
  apply plugin: 'checkstyle'
-  checkstyle {
-    // Keep checkstyle a little quieter
-    ignoreFailures = true
-    showViolations = false
-  }
+ checkstyle {
+     // Keep checkstyle a little quieter
+     ignoreFailures = true
+     showViolations = false
+ }
 
-  tasks.withType(Checkstyle) {
-  }
-  checkstyle {
-      toolVersion = "8.8"
-  }
+ tasks.withType(Checkstyle) {
+ }
+ checkstyle {
+     toolVersion = "8.8"
+ }
 
 
 ///////////////////////////////////////////////////////////////////////
