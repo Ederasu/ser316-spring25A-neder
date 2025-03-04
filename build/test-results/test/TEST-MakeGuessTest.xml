@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MakeGuessTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-01-31T04:57:15" hostname="NICOMOTO" time="0.001">
+<testsuite name="MakeGuessTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-13T05:45:30" hostname="NICOMOTO" time="0.001">
   <properties/>
   <testcase name="correctGuess()" classname="MakeGuessTest" time="0.001"/>
-  <system-out><![CDATA[Implement me in assignment 3
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
