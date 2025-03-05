@@ -24,16 +24,18 @@ class Game {
 
     public Game(String name) {
         this.name = name;
-        initializeGame();
+        this.points = 10;
+        this.answer = getRandomWord();
     }
 
-    private void initializeGame() {
-        setRandomWord();
-        setPoints(10);
-    }
-
-    private void setPoints(int point) {
-        this.points = point;
+    private String getRandomWord() {
+        if (usedWords.size() == words.size()) {
+            usedWords.clear();
+        }
+        List<String> availableWords = words.stream().filter(w -> !usedWords.contains(w)).toList();
+        String selectedWord = availableWords.get(random.nextInt(availableWords.size()));
+        usedWords.add(selectedWord);
+        return selectedWord;
     }
 
     private void setRandomWord() {
@@ -145,6 +147,18 @@ class Game {
             writer.write(name + ": " + points + "\n");
         } catch (IOException e) {
             System.out.println("Error saving score: " + e.getMessage());
+        }
+    }
+
+    public int getPoints() {
+        return this.points; 
+    }
+
+    public boolean isGameOver() {
+        if (gameStatus == 2) {
+            return true;
+        } else {
+            return false;
         }
     }
 
